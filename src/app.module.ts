@@ -64,7 +64,10 @@ import * as winston from 'winston';
             User,
             MovieUserLike
           ],
-          synchronize: true
+          synchronize: true,
+          ssl: {
+            rejectUnauthorized: false
+          },
       }),
       inject: [ConfigService]
     }),
