@@ -26,6 +26,8 @@
     "test:genre": "jest --testPathPattern=src/genre --coverage --collectCoverageFrom=src/genre/**"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.835.0",
+    "@aws-sdk/s3-request-presigner": "^3.835.0",
     "@nestjs/cache-manager": "^3.0.1",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
@@ -39,10 +41,12 @@
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/typeorm": "^11.0.0",
     "@types/multer": "^1.4.12",
+    "aws-sdk": "^2.1692.0",
     "bcryptjs": "^3.0.2",
     "cache-manager": "^6.4.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "dotenv": "^16.5.0",
     "joi": "^17.13.3",
     "nest-winston": "^1.10.2",
     "passport": "^0.7.0",

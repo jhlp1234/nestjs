@@ -8,6 +8,10 @@ const dbDatabase = 'DB_DATABASE';
 const hashRounds = 'HASH_ROUNDS';
 const accessTokenSecret = 'ACCESS_TOKEN_SECRET';
 const refreshTokenSecret = 'REFRESH_TOKEN_SECRET';
+const awsSecretAccessKey = 'AWS_SECRET_ACCESS_KEY';
+const awsAccessKeyId = 'AWS_ACCESS_KEY_ID';
+const awsRegion = 'AWS_REGION';
+const bucketName = 'BUCKET_NAME';
 
 export const envVariables = {
   env,
@@ -20,4 +24,8 @@ export const envVariables = {
   hashRounds,
   refreshTokenSecret,
   accessTokenSecret,
+  awsSecretAccessKey,
+  awsAccessKeyId,
+  awsRegion,
+  bucketName
 };

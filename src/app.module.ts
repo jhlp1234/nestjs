@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/c
 import { MovieModule } from './movie/movie.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import * as joi from 'joi';
+import Joi, * as joi from 'joi';
 import { Movie } from './movie/entity/movie.entity';
 import { MovieDetail } from './movie/entity/movie-detail.entity';
 import { DirectorModule } from './director/director.module';
@@ -46,6 +46,10 @@ import * as winston from 'winston';
         HASH_ROUNDS: joi.number().required(),
         ACCESS_TOKEN_SECRET: joi.string().required(),
         REFRESH_TOKEN_SECRET: joi.string().required(),
+        AWS_SECRET_ACCESS_KEY: joi.string().required(),
+        AWS_ACCESS_KEY_ID: joi.string().required(),
+        AWS_REGION: joi.string().required(),
+        BUCKET_NAME: joi.string().required(),
       })
     }),
     TypeOrmModule.forRootAsync({
@@ -64,10 +68,12 @@ import * as winston from 'winston';
             User,
             MovieUserLike
           ],
-          synchronize: true,
-          ssl: {
-            rejectUnauthorized: false,
-          },
+          synchronize: configService.get<string>(envVariables.env) === 'production' ? false : true,
+          // ...(configService.get<string>(envVariables.env) === 'production' && {
+          //   ssl: {
+          //   rejectUnauthorized: false,
+          // },
+          // })  
       }),
       inject: [ConfigService]
     }),
