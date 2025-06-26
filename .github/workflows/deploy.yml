@@ -52,7 +52,7 @@ jobs:
           touch test.env
           echo ENV="test" >> test.env
           echo DB_TYPE="$DB_TYPE" >> test.env
-          echo DB_HOST="$DB_HOST" >> test.env
+          echo DB_HOST="localhost" >> test.env
           echo DB_PORT="$DB_PORT" >> test.env
           echo DB_USERNAME="$DB_USERNAME" >> test.env
           echo DB_PASSWORD="$DB_PASSWORD" >> test.env
