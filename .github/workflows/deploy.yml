@@ -126,5 +126,5 @@ jobs:
 
           aws elasticbeanstalk update-environment \
             --application-name "Nestjs-Test" \
-            --environment-name "Nestjs-Test-env2" \
+            --environment-name "Nestjs-Test-env" \
             --version-label $GITHUB_SHA
