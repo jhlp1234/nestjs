@@ -30,7 +30,7 @@ jobs:
       - name: Set Up NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # - name: Create Env File
       #   env:
@@ -58,7 +58,7 @@ jobs:
           mkdir -p ./public/temp
 
       - name: Install Depencies
-        run: npm i --force
+        run: npm i
 
       - name: Build Project
         run: npm run build
