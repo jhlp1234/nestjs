@@ -58,7 +58,7 @@ jobs:
           mkdir -p ./public/temp
 
       - name: Install Depencies
-        run: npm ci
+        run: npm i --force
 
       - name: Build Project
         run: npm run build
