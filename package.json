@@ -18,7 +18,7 @@
     "test:integration": "jest --testRegex='.*\\.integration.spec\\.ts$'",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "NODE_ENV=test jest --config ./jest-e2e.json",
+    "test:e2e": "cross-env NODE_ENV=test jest --config ./jest-e2e.json",
     "test:user": "jest --testPathPattern=src/user --coverage --collectCoverageFrom=src/user/**",
     "test:user:watch": "jest --watch --testPathPattern=src/user --coverage --collectCoverageFrom=src/user/**",
     "test:auth": "jest --testPathPattern=src/auth --coverage --collectCoverageFrom=src/auth/**",
@@ -126,6 +126,9 @@
     "testEnvironment": "node",
     "moduleNameMapper": {
       "src/(.*)": "<rootDir>/src/$1"
-    }
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@paralleldrive/cuid2|formidable)/)"
+    ]
   }
 }
