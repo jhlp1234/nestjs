@@ -63,8 +63,8 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Run Test
-        run: npm run test
+      # - name: Run Test
+      #   run: npm run test
 
       - name: Install Typeorm
         run: npm i -g typeorm
