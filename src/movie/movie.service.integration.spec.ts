@@ -117,7 +117,7 @@ describe('MovieService - Integration Test', () => {
 
             const cachedData = await cacheManager.get('MOVIE_RECENT');
 
-            expect(cachedData).toEqual(result.map((x) => ({...x, createdAt: x.createdAt.toISOString(), updatedAt: x.updatedAt.toISOString()})));
+            expect(cachedData).toEqual(result);
         })
     })
 
