@@ -16,6 +16,7 @@ import { GetMoviesDto } from './dto/get-movies.dto';
 import { BadRequestException, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
+import { ConfigService } from '@nestjs/config';
 
 describe('MovieService', () => {
   let service: MovieService;
@@ -28,6 +29,7 @@ describe('MovieService', () => {
   let movieUserLikeRepository: jest.Mocked<Repository<MovieUserLike>>;
   let dataSource: jest.Mocked<DataSource>;
   let commonService: jest.Mocked<CommonService>;
+  let configService: jest.Mocked<ConfigService>;
 
   beforeEach(async () => {
     const {unit, unitRef} = TestBed.create(MovieService).compile();

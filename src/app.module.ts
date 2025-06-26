@@ -69,11 +69,11 @@ import * as winston from 'winston';
             MovieUserLike
           ],
           synchronize: configService.get<string>(envVariables.env) === 'production' ? false : true,
-          // ...(configService.get<string>(envVariables.env) === 'production' && {
-          //   ssl: {
-          //   rejectUnauthorized: false,
-          // },
-          // })  
+          ...(configService.get<string>(envVariables.env) === 'production' && {
+            ssl: {
+            rejectUnauthorized: false,
+          },
+          })  
       }),
       inject: [ConfigService]
     }),
