@@ -125,10 +125,7 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "src/(.*)": "<rootDir>/src/$1"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(@paralleldrive/cuid2|formidable)/)"
-    ]
+      "^@App/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }
